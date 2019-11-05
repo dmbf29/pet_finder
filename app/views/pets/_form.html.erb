@@ -1,0 +1,30 @@
+<div class="container">
+  <%= form_for @pet do |f| -%>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :location %>
+      <%= f.text_field :location, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :dead %>
+      <%= f.check_box :dead, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :species %>
+      <%= f.select :species, Pet::SPECIES,class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :color %>
+      <%= f.text_field :color, class: 'form-control' %>
+    </div>
+
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end -%>
+</div>

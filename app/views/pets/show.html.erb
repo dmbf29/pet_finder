@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h1>
+    <%= @pet.name %>
+    <%= link_to edit_pet_path(@pet) do %>
+      <i class="fas fa-pencil-alt"></i>
+    <% end %>
+    <%= link_to pet_path(@pet), method: :delete do %>
+      <i class="fas fa-bomb"></i>
+    <% end %>
+  </h1>
+    <p><%= @pet.species %></p>
+    <p><%= @pet.location %></p>
+    <p><%= @pet.color %></p>
+    <% if @pet.dead? %>
+      <i class="fas fa-skull-crossbones"></i>
+    <% else %>
+      <i class="fas fa-paw"></i>
+    <% end %>
+    <h6>Found <%= @pet.found_days_ago %> day ago</h6>
+    <%= link_to "List", pets_path  %>
+</div>

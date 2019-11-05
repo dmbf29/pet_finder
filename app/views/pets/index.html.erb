@@ -1,0 +1,27 @@
+<div class="d-flex">
+  <h1>Found Pets
+    <%= link_to new_pet_path do  %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @pets.each do |pet| %>
+      <div class="col-3 pet-card">
+        <h4><%= pet.name%></h4>
+        <p><%= pet.species %></p>
+        <p><%= pet.location %></p>
+        <p><%= pet.color %></p>
+        <% if pet.dead? %>
+          <i class="fas fa-skull-crossbones"></i>
+        <% else %>
+          <i class="fas fa-paw"></i>
+        <% end %>
+        <h6>Found <%= pet.found_days_ago %> day ago</h6>
+        <%= link_to "", pet_path(pet), class: 'pet-card-link' %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.pet-card {
+  position: relative;
+}
+
+.pet-card:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.pet-card-link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
